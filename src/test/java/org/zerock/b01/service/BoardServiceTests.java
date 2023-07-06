@@ -29,4 +29,26 @@ public class BoardServiceTests {
         
     }
 
+    @Test
+    public void testModify() {
+
+        BoardDTO boardDTO = BoardDTO.builder()
+                .bno(2L)
+                .title("Update...2")
+                .content("Update... 2")
+                .build();
+
+        boardService.modify(boardDTO);
+    }
+
+    @Test
+    public void testRemove() {
+
+        Long bno = 101L;
+
+        boardService.remove(bno);
+
+    }
+
+
 }
