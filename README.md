@@ -3,7 +3,7 @@
 
 ### ⚙️ 개발 환경
 - Java 11
-- `**IDE** : IntelliJ`
+- **IDE** : IntelliJ
 - `**Framework** : Springboot(2.7.12)`
 - `**Database** : MariaDB`
 - `**Front** : thymeleaf`
