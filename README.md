@@ -1,7 +1,7 @@
 ### Repository Name - springboot-web-board
 스프링 부트
 
-###![캡처](https://github.com/hyunwoo2546/springboot-web-board/assets/70044292/4275982b-77ee-4718-a1cb-51638c604eca) Java - 11
+### (https://github.com/hyunwoo2546/springboot-web-board/assets/70044292/4275982b-77ee-4718-a1cb-51638c604eca) Java - 11
 ### Springboot - 2.7.12
 ### Front - thymeleaf
 ### DB - mariaDB
