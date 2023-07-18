@@ -1,7 +1,7 @@
 # Repository Name - springboot-web-board
 
-# Java 11
-# Springboot 2.7.12
+# Java - 11
+# Springboot - 2.7.12
 # Front - thymeleaf
 # DB - mariaDB
 # WAS - 내장
