@@ -13,5 +13,3 @@ TEST
 
 
 
-
-![apachespark](https://github.com/hyunwoo2546/springboot-web-board/assets/70044292/813c24b1-4397-42b3-bb67-2e9d7fc53884)
