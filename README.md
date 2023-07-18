@@ -1,6 +1,5 @@
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=TypeScript&logoColor=white"/>
-
 ### Repository Name - springboot-web-board
+스프링 부트
 
 ### Java - 11
 ### Springboot - 2.7.12
