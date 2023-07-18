@@ -2,7 +2,7 @@
 <br>
 
 ### ⚙️ 개발 환경
-- `Java 11`
+- **Java** : 11
 - **IDE** : IntelliJ
 - **Framework** : Springboot(2.7.12)
 - **Database** : MariaDB
