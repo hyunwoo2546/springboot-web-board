@@ -1,6 +1,8 @@
 ## 💻 Repository Name - springboot-web-board
 <br>
 
+### 🕰️ 개발 기간
+
 ### ⚙️ 개발 환경
 - **Java** : 11
 - **IDE** : IntelliJ
