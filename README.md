@@ -1,4 +1,4 @@
-## 💻 Repository Name - springboot-web-board
+## 커뮤니티 프로젝트
 <br>
 
 ### 🕰️ 개발 기간 (새로이 프로젝트 진행중)
