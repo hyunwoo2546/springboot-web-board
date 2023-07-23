@@ -101,4 +101,14 @@ public class BoardController {
         return "redirect:/board/read";
     }
 
+    @PostMapping("/remove")
+    public String remove(Long bno) {
+
+        log.info("remove post : " + bno);
+
+        service.remove(bno);
+
+        return "redirect:/board/list";
+    }
+
 }

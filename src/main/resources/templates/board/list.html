@@ -36,7 +36,10 @@
                         Board List
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Board List</h5>
+                        <h5 class="card-title">
+                            Board List
+                            <button type="button" class="btn btn-primary registerBtn" style="float: right">글 등록</button>
+                        </h5>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -127,6 +130,13 @@
             e.stopPropagation()
 
             self.location = '/board/list'
+        },false)
+
+        document.querySelector(".registerBtn").addEventListener("click",function (e) {
+            e.preventDefault()
+            e.stopPropagation()
+
+            self.location = '/board/register'
         },false)
 
         //show modal
