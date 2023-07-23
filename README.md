@@ -20,3 +20,4 @@
 - **ORM** : JPA(Hibernate)
 - **WAS** : 내장
 - **Server** : AWS 사용 예정
+- **Test Tool** : Swagger UI
