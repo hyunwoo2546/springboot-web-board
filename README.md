@@ -22,6 +22,7 @@
 - **Server** : AWS 사용 예정
 - **Test Tool** : Swagger UI
 
+```
 # api 기능 추가
 feat(show): 상영정보등록
 ~blank~
