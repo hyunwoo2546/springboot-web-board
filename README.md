@@ -21,3 +21,12 @@
 - **WAS** : 내장
 - **Server** : AWS 사용 예정
 - **Test Tool** : Swagger UI
+
+# api 기능 추가
+feat(show): 상영정보등록
+~blank~
+ - 상영 정보를 등록한다.
+ - 상영 스케쥴을 등록한다.
+~blank~
+closes #23
+```
