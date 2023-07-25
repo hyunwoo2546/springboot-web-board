@@ -22,6 +22,9 @@
 - **Server** : AWS 사용 예정
 - **Test Tool** : Swagger UI
 
+<br>
+
+### 📌 노트
 ```
 # JPA에서의 인덱스 태우기
 @Table(name = "Reply", indexes = {
