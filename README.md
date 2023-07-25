@@ -23,11 +23,8 @@
 - **Test Tool** : Swagger UI
 
 ```
-# api 기능 추가
-feat(show): 상영정보등록
-~blank~
- - 상영 정보를 등록한다.
- - 상영 스케쥴을 등록한다.
-~blank~
-closes #23
+## JPA에서의 인덱스 태우기
+@Table(name = "Reply", indexes = {
+        @Index(name = "idx_reply_board_bno", columnList = "board_bno")
+})
 ```
