@@ -23,7 +23,7 @@
 - **Test Tool** : Swagger UI
 
 ```
-## JPA에서의 인덱스 태우기
+# JPA에서의 인덱스 태우기
 @Table(name = "Reply", indexes = {
         @Index(name = "idx_reply_board_bno", columnList = "board_bno")
 })
