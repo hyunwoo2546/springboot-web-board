@@ -21,3 +21,13 @@
 - **WAS** : 내장
 - **Server** : AWS 사용 예정
 - **Test Tool** : Swagger UI
+
+<br>
+
+### 📌 노트
+```
+# JPA에서의 인덱스 태우기
+@Table(name = "Reply", indexes = {
+        @Index(name = "idx_reply_board_bno", columnList = "board_bno")
+})
+```
