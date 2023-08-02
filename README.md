@@ -36,13 +36,13 @@
 
 ```
 # orElseThrow()
-ex
+ex)
     @Override
     public ReplyDTO read(Long rno) {
 
         Optional<Reply> replyOptional = replyRepository.findById(rno);
 
-        // - orElseThrow() : 해당되는 값이 없다면 예외 있다면 return
+        // orElseThrow() : 해당되는 값이 없다면 예외 있다면 return
         Reply reply = replyOptional.orElseThrow();
 
         return modelMapper.map(reply, ReplyDTO.class);
