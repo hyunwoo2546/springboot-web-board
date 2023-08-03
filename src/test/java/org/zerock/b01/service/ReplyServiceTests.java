@@ -21,6 +21,6 @@ public class ReplyServiceTests {
                 .bno(321L)
                 .build();
 
-        log.info(replyService.reigster(replyDTO));
+        log.info(replyService.register(replyDTO));
     }
 }

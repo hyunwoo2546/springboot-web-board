@@ -6,7 +6,7 @@ import org.zerock.b01.dto.ReplyDTO;
 
 public interface ReplyService {
 
-    Long reigster(ReplyDTO replyDTO);
+    Long register(ReplyDTO replyDTO);
 
     ReplyDTO read(Long rno);
 

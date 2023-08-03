@@ -28,7 +28,7 @@ public class ReplyServiceImpl implements ReplyService{
     private final ModelMapper modelMapper;
 
     @Override
-    public Long reigster(ReplyDTO replyDTO) {
+    public Long register(ReplyDTO replyDTO) {
 
         Reply reply = modelMapper.map(replyDTO, Reply.class);
 
