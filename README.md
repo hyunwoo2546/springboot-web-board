@@ -102,7 +102,7 @@ public class RootConfig {
         modelMapper.getConfiguration()
                 .setFieldMatchingEnabled(true)
                 .setFieldAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PRIVATE)
-                .setMatchingStrategy(MatchingStrategies.LOOSE); // # 매칭전략을 느스함으로 설정 변경
+                .setMatchingStrategy(MatchingStrategies.LOOSE); // # 매칭전략을 느슨함으로 설정 변경
 
         return modelMapper;
     }
