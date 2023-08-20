@@ -20,15 +20,16 @@ async function addReply(replyObj) {
 }
 
 async function getReply(rno) {
-
     const response = await axios.get(`/replies/${rno}`)
-
     return response.data
-
 }
 
 async function modifyReply(replyObj) {
-
     const response = await axios.put(`/replies/${replyObj.rno}`, replyObj)
     return response.data
+}
+
+async function removeReply(rno) {
+    const respone = await axios.delete(`/replies/${rno}`)
+    return respone.data
 }

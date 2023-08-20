@@ -234,6 +234,24 @@
         })
     },false)
 
+    /*# 댓글 페이지 번호 (댓글 수정시 사용) */
+    let page = 1
+    let size = 10
+
+    replyPaging.addEventListener("click", function (e) {
+        e.preventDefault()
+        e.stopPropagation()
+
+        const target = e.target
+
+        if(!target || target.tagName != 'A') {
+            return
+        }
+
+        const pageNum = target.getAttribute("data-page")
+        page = pageNum
+        printReplies(page,size)
+    }, false)
 
     //수정 Modal
     const modifyModal = new bootstrap.Modal(document.querySelector(".modifyModal"))
@@ -291,6 +309,23 @@
 
     closeBtn.addEventListener("click", function (e) {
         modifyModal.hide()
+    },false)
+
+    removeBtn.addEventListener("click", function (e) {
+
+        removeReply(replyHeader.innerHTML).then(result => {
+
+            alert(result.rno + '댓글이 삭제되었습니다.')
+            replyText.value = ''
+            modifyModal.hide()
+
+            page = 1
+
+            printReplies(page,size)
+
+        }).catch(e=> {
+            console.log(e)
+        })
     },false)
 
 </script>
