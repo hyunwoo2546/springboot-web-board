@@ -120,3 +120,53 @@ public class RootConfig {
 [참고 문헌 : 구멍가게 코딩단.2022.자바 웹 개발 워크북.프리렉]
 ```
 
+<br>
+
+```
+# MultiPartFile
+- 서블릿 3이상이 되면서 부터 별도의 라이브러리를 사용하지 않고 서블릿 API 자체에서 파일 업로드를 처리해주는 API를 제공.
+
+1) application.properties
+  - MultiPart 관련 설정 정보 추가
+    ++
+    spring.servlet.multipart.enabled=true
+    spring.servlet.multipart.location=C:\\upload
+    spring.servlet.multipart.max-request-size=30MB
+    spring.servlet.multipart.max-file-size=10MB
+
+    // path 설정
+    org.zerock.upload.path=C:\\upload
+
+
+
+2) UpDownController
+  - application.properties에서 path로 설정해 놓은 것을 어노테이션 @Value로 path 정보 읽어서 변수의 값으로 사용.
+    ++
+    @Value("${org.zerock.upload.path}")
+    private String uploadPath;
+
+
+
+3) 첨부파일 저장 (UUID)
+  - 파일 저장시 동일 이름의 파일에 문제가 생길수 있으므로 UUID를 사용하여 처리
+    ++
+    if(uploadFileDTO.getFiles() !=  null) {
+        uploadFileDTO.getFiles().forEach(multipartFile -> {
+
+            String originalName = multipartFile.getOriginalFilename();
+            log.info(originalName);
+
+            String uuid = UUID.randomUUID().toString();
+
+            // UUID사용하여 파일 이름이 겹치는걸 방지
+            Path savePath = Paths.get(uploadPath, uuid + "_" + originalName);
+
+            try {
+                multipartFile.transferTo(savePath); // 실제 파일 저장
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+    }
+```
