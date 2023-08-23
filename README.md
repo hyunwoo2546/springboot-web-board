@@ -174,4 +174,6 @@ public class RootConfig {
 
 4) 썸네일 처리는 thumbnailator 라이브러리 사용
     ex) implementation 'net.coobird:thumbnailator:0.4.17'
+
+
 ```
