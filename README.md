@@ -137,11 +137,15 @@ public class RootConfig {
     // path 설정
     org.zerock.upload.path=C:\\upload
 
+
+
 2) UpDownController
   - application.properties에서 path로 설정해 놓은 것을 어노테이션 @Value로 path 정보 읽어서 변수의 값으로 사용.
     ++
     @Value("${org.zerock.upload.path}")
     private String uploadPath;
+
+
 
 3) 첨부파일 저장 (UUID)
   - 파일 저장시 동일 이름의 파일에 문제가 생길수 있으므로 UUID를 사용하여 처리
