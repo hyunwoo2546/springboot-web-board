@@ -142,5 +142,32 @@ public class RootConfig {
     ++
     @Value("${org.zerock.upload.path}")
     private String uploadPath;
+
+3) 첨부파일 저장 (UUID)
+  - 파일 저장시 동일 이름의 파일에 문제가 생길수 있으므로 UUID를 사용하여 처리
+![123123123](https://github.com/hyunwoo2546/springboot-web-board/assets/70044292/759256a6-8490-423c-a32a-af5d7db1b59d)
+
+    ++
+    if(uploadFileDTO.getFiles() !=  null) {
+        uploadFileDTO.getFiles().forEach(multipartFile -> {
+
+            String originalName = multipartFile.getOriginalFilename();
+            log.info(originalName);
+
+            String uuid = UUID.randomUUID().toString();
+
+            // UUID사용하여 파일 이름이 겹치는걸 방지
+            Path savePath = Paths.get(uploadPath, uuid + "_" + originalName);
+
+            try {
+                multipartFile.transferTo(savePath); // 실제 파일 저장
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
+    }
+
+
 ```
 
