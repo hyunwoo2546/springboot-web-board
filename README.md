@@ -146,7 +146,7 @@ public class RootConfig {
 3) 첨부파일 저장 (UUID)
   - 파일 저장시 동일 이름의 파일에 문제가 생길수 있으므로 UUID를 사용하여 처리
 
-  ![123123123](https://github.com/hyunwoo2546/springboot-web-board/assets/70044292/256c207e-f205-4943-b9c4-147904d9ffc2)
+  
 
 
     ++
