@@ -145,11 +145,6 @@ public class RootConfig {
 
 3) 첨부파일 저장 (UUID)
   - 파일 저장시 동일 이름의 파일에 문제가 생길수 있으므로 UUID를 사용하여 처리
-
-  
-
-
-
     ++
     if(uploadFileDTO.getFiles() !=  null) {
         uploadFileDTO.getFiles().forEach(multipartFile -> {
@@ -170,8 +165,4 @@ public class RootConfig {
 
         });
     }
-
-
 ```
-
-![123123123](https://github.com/hyunwoo2546/springboot-web-board/assets/70044292/d0374225-6ab2-4a06-80f0-b141292abb3f)
