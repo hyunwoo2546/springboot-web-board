@@ -176,4 +176,31 @@ public class RootConfig {
     ex) implementation 'net.coobird:thumbnailator:0.4.17'
 
 
+
+5) @OneToMany
+  - @OneToMany는 기본적으로 각 엔티티에 해당하는 테이블을 독립적으로 생성하고 중간에 매핑해주는 테이블을 생성할때 이용한다.
+    ++
+    @Entity
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @ToString(exclude = "imageSet") // 엔티티 클래스 작성시에 연관 관계를 적용할 때 exclude 적용
+    public class Board extends BaseEntity{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long bno;
+
+    ...
+
+    @OneToMany
+    @Builder.Default
+    private Set<BoardImage> imageSet = new HashSet<>();
+    // 부연 설명 : 중간에 매핑해주는 테이블 imageSet 테이블이 생성된다.
+
+    ...
+
+    }
+
 ```
