@@ -24,6 +24,14 @@
 
 <br>
 
+### 🎯 참고사항
+```
+# JPA Q클래스 재생성으로 인한 충돌 오류
+  - 해결방법 : 인텔리제이의 경우 BUILD 세팅값을 gradle에서 IntelliJ로 변경.
+```
+
+<br>
+
 ### 📌 노트
 ```
 # JPA에서의 인덱스 태우기
@@ -175,5 +183,32 @@ public class RootConfig {
 4) 썸네일 처리는 thumbnailator 라이브러리 사용
     ex) implementation 'net.coobird:thumbnailator:0.4.17'
 
+
+
+5) @OneToMany
+  - @OneToMany는 기본적으로 각 엔티티에 해당하는 테이블을 독립적으로 생성하고 중간에 매핑해주는 테이블을 생성할때 이용한다.
+    ++
+    @Entity
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @ToString(exclude = "imageSet") // 엔티티 클래스 작성시에 연관 관계를 적용할 때 exclude 적용
+    public class Board extends BaseEntity{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long bno;
+
+    ...
+
+    @OneToMany
+    @Builder.Default
+    private Set<BoardImage> imageSet = new HashSet<>();
+    // 부연 설명 : 중간에 매핑해주는 테이블 imageSet 테이블이 생성된다.
+
+    ...
+
+    }
 
 ```
