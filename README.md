@@ -136,6 +136,7 @@ public class RootConfig {
 
 1) application.properties
   - MultiPart 관련 설정 정보 추가
+
     ++
     spring.servlet.multipart.enabled=true
     spring.servlet.multipart.location=C:\\upload
@@ -149,6 +150,7 @@ public class RootConfig {
 
 2) UpDownController
   - application.properties에서 path로 설정해 놓은 것을 어노테이션 @Value로 path 정보 읽어서 변수의 값으로 사용.
+
     ++
     @Value("${org.zerock.upload.path}")
     private String uploadPath;
@@ -157,6 +159,7 @@ public class RootConfig {
 
 3) 첨부파일 저장 (UUID)
   - 파일 저장시 동일 이름의 파일에 문제가 생길수 있으므로 UUID를 사용하여 처리
+
     ++
     if(uploadFileDTO.getFiles() !=  null) {
         uploadFileDTO.getFiles().forEach(multipartFile -> {
@@ -187,6 +190,7 @@ public class RootConfig {
 
 5) @OneToMany
   - @OneToMany는 기본적으로 각 엔티티에 해당하는 테이블을 독립적으로 생성하고 중간에 매핑해주는 테이블을 생성할때 이용한다.
+
     ++
     @Entity
     @Getter
@@ -208,6 +212,21 @@ public class RootConfig {
     // 부연 설명 : 중간에 매핑해주는 테이블 imageSet 테이블이 생성된다.
 
     ...
+
+    }
+
+
+
+6) @EntityGraph
+  - @OneToMany를 사용할 시 @EntityGraph에 attributePaths를 이용하여 하위 엔티티를 핸들링 할 수 있다
+
+    ++
+    public interface BoardRepository extends JpaRepository<Board, Long>, BoardSearch {
+
+    // imageSet은 domain.Board엔티티 명시되어있음
+    @EntityGraph(attributePaths = {"imageSet"})
+    @Query("select b from Board b where b.bno =:bno")
+    Optional<Board> findByIdWithImages(@Param("bno") Long bno);
 
     }
 
