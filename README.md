@@ -206,8 +206,10 @@ public class RootConfig {
 
     ...
 
-    @OneToMany
-    @Builder.Default
+    @OneToMany(mappedBy = "board",
+               cascade = {CascadeType.ALL},
+               fetch = FetchType.LAZY,
+               orphanRemoval = true) // 하위 엔티티의 참조가 더이상 없는 경우 true값으로 설정하여야 실제로 값 삭제가 이루어 진다.
     private Set<BoardImage> imageSet = new HashSet<>();
     // 부연 설명 : 중간에 매핑해주는 테이블 imageSet 테이블이 생성된다.
 
