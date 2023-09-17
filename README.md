@@ -131,6 +131,21 @@ public class RootConfig {
 <br>
 
 ```
+# ModelMapper -> Default Method
+- ModelMapper는 단순한 구조의 객체를 다른 타입의 객체로 만드는데 편리하게 이용된다.
+  하지만 인터페이스가 정의되어 해당 메소드가 구현된 후 추가로 다양한 처리가 필요할 경우 복잡해질수 있기에 Default Method를 사용한다.(하위 호환성 유지)
+
+- DTO -> Entity & Entity -> DTO
+ex)
+Board board = modelMapper.map(boardDTO, Board.class); // ModelMapper 사용 예시
+
+Board board = dtoTOEntity(boardDTO); // Default Method 사용 예시
+
+```
+
+<br>
+
+```
 # MultiPartFile
 - 서블릿 3이상이 되면서 부터 별도의 라이브러리를 사용하지 않고 서블릿 API 자체에서 파일 업로드를 처리해주는 API를 제공.
 
