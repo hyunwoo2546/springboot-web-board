@@ -122,13 +122,47 @@
         }
 
         uploadToServer(formObj).then(result => {
-            console.log(result)
+            for (const uploadResult of result) {
+                showUploadFile(uploadResult)
+            }
             uploadModal.hide()
         }).catch(e => {
             uploadModal.hide()
         })
 
     }, false)
+
+    // showUploadFile
+    const uploadResult = document.querySelector(".uploadResult")
+
+    function showUploadFile ({uuid, fileName, link}) {
+
+        const str =`<div class="card col-4">
+                        <div class="card-header d-flex justify-content-center">
+                            ${fileName}
+                            <button class="btn-sm btn-danger" onclick="javascript:removeFile('${uuid}', '${fileName}', this)">X</button>
+                        </div>
+                        <div class="card-body">
+                            <img src="/view/${link}" data-src="${uuid+"_"+fileName}">
+                        </div>
+                    </div>`
+
+        uploadResult.innerHTML += str
+    }
+
+    function removeFile(uuid,fileName, obj) {
+
+        console.log(uuid)
+        console.log(fileName)
+        console.log(obj)
+
+        const targetDiv = obj.closest(".card")
+
+        removeFileToServer(uuid,fileName).then(data => {
+            targetDiv.remove()
+        })
+
+    }
 
 </script>
 
